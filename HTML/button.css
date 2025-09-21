@@ -1,0 +1,79 @@
+<button class="Home-button">
+      Home
+    </button>
+    <button class="About-button">
+      About
+    </button>
+    <button class="Services-button">
+      Services
+    </button>
+    <button class="Gallery-button">
+      Gallery
+    </button>
+     <button class="Contact_Us-button">
+      Contact Us
+    </button>
+<style> .home-button{
+    font-size: 15px;
+    background-color: rgb(29, 155, 240);
+    color: white;
+    padding: 7px 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    line-height: 22.5px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+}
+   .about-button{
+    font-size: 15px;
+    background-color: rgb(29, 155, 240);
+    color: white;
+    padding: 7px 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    line-height: 22.5px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+   }
+   .services-button{font-size: 15px;
+    background-color: rgb(29, 155, 240);
+    color: white;
+    padding: 7px 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    line-height: 22.5px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+  }
+   .gallery-button{
+    font-size: 15px;
+    background-color: rgb(29, 155, 240);
+    color: white;
+    padding: 7px 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    line-height: 22.5px;
+    cursor: pointer;
+    transition: box-shadow 0.15s
+   }
+
+   .contact_us-button{
+    font-size: 15px;
+    background-color: rgb(29, 155, 240);
+    color: white;
+    padding: 7px 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    line-height: 22.5px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+   }
+   
+
+
+   </style>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | D&amp;C Manufacturing</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+      background: #f4f7fa url(../HTML/images/Plasma\ cutter.jpeg.webp) no-repeat center top fixed;
+      background-size: cover;
+      margin: 0;
+      color: #1a365d;
+      min-height: 100vh;
+    }
+    .main-header {
+      background: linear-gradient(90deg, #1a365d 0%, #3182ce 100%);
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(30,54,93,0.08);
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .logo {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: auto;
+    }
+    nav ul li {
+      display: inline-block;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(49,130,206,0.92);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: background 0.18s, color 0.18s;
+      box-shadow: 0 1px 4px rgba(30,54,93,0.07);
+    }
+    nav ul li a:hover, nav ul li a:focus {
+      background: #1a365d;
+      color: #e2e8f0;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      padding: 0 24px 48px 24px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(30,54,93,0.07);
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a365d;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    p.subtitle {
+      text-align: center;
+      color: #4a5568;
+      margin-bottom: 36px;
+      font-size: 1.15rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      justify-content: center;
+      margin-top: 18px;
+    }
+    .gallery img {
+      width: 200px;
+      height: 140px;
+      object-fit: cover;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 4px;
+      background: #e2e8f0;
+      box-shadow: 0 1px 6px rgba(30,54,93,0.08);
+      transition: box-shadow 0.18s, transform 0.18s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      box-shadow: 0 6px 24px rgba(30,54,93,0.18);
+      transform: scale(1.12);
+      z-index: 2;
+    }
+    #footer {
+      background: #1a365d;
+      color: #fff;
+      text-align: center;
+      padding: 18px 0 16px 0;
+      font-size: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      letter-spacing: 1px;
+      margin-top: 40px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 -2px 8px rgba(30,54,93,0.07);
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(30,54,93,0.92);
+      animation: fadeIn 0.2s;
+    }
+    .modal-content {
+      display: block;
+      margin: 60px auto 0 auto;
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      background: #fff;
+      padding: 8px;
+      animation: zoomIn 0.2s;
+    }
+    .close {
+      position: absolute;
+      top: 24px;
+      right: 48px;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-shadow: 0 2px 8px #1a365d;
+      z-index: 1001;
+      transition: color 0.15s;
+    }
+    .close:hover, .close:focus {
+      color: #3182ce;
+      text-decoration: none;
+    }
+    .prev {
+      position: relative;
+      top: 50%;
+      color: #fff;
+      font-size: 3rem;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      padding: 8px 12px;
+      border-radius: 50%;
+      background: rgba(49,130,206,0.8);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: background 0.15s;
+      z-index: 1001;
+    }
+    .next {
+      position: relative;
+      top: 50%;
+      color: #fff;
+      font-size: 3rem;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      padding: 8px 12px;
+      border-radius: 50%;
+      background: rgba(49,130,206,0.8);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: background 0.15s;
+      z-index: 1001;
+      float: right;
+      right: 20px;
+    }
+    .prev:hover, .next:hover {
+      background: #3182ce;
+    }
+    #caption {
+      text-align: center;
+      color: #1a365d;
+      font-size: 1.15rem;
+      margin-top: 18px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.8); }
+      to { transform: scale(1); }
+    }
+    @media (max-width: 700px) {
+      .container {
+        padding: 0 8px 32px 8px;
+      }
+      .nav-container {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 12px 8px;
+      }
+      .gallery img {
+        width: 98vw;
+        max-width: 320px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="nav-container">
+      <div class="logo">D&amp;C Manufacturing</div>
+      <nav>
+        <ul>
+          <li><a href="dandcmfg.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a href="Contact.html">Contact Us</a></li>
+          <li><a href="https://derksenbuildings.com" target="_blank" rel="noopener">Portable Buildings</a></li>
+          <li><a href="https://wildlifemanagementtechnologies.com/" target="_blank" rel="noopener">Wildlife Management</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <h1>Project Gallery</h1>
+      <p class="subtitle">Explore a selection of our recent custom fabrication projects and installations.</p>
+      <div class="gallery">
+        <img src="../HTML/images/Sign.jpg" alt="D&C Manufacturing Sign" class="gallery-img" />
+        <img src="../HTML/images/truckbed.jpg" alt="Custom Truck Bed" class="gallery-img" />
+        <img src="../HTML/images/Fire Wood Rack.jpg" alt="Fire Wood Rack" class="gallery-img" />
+        <img src="../HTML/images/Fire Pits 002.JPG" alt="Fire Pit 001" class="gallery-img" />
+        <img src="../HTML/images/Fire Pits 010.JPG" alt="Fire Pit 010" class="gallery-img" />
+        <img src="../HTML/images/Single Dog Box 003.JPG" alt="Single Dog Box 003" class="gallery-img" />
+        <img src="../HTML/images/Single Dog Box 005.JPG" alt="Single Dog Box 005" class="gallery-img" />
+        <img src="../HTML/images/Auto feeder.jpg" alt="Auto Feeder 001" class="gallery-img" />
+        <img src="../HTML/images/Auto Feeder 2.jpg" alt="Auto Feeder 002" class="gallery-img" />
+        <img src="../HTML/images/Auto Feeder 3.jpg" alt="Auto Feeder 003" class="gallery-img" />
+        <img src="../HTML/images/Auto Feeder 4.jpg" alt="Auto Feeder 004" class="gallery-img" />
+        <img src="../HTML/images/Smoker 104.JPG" alt="Smoker 104" class="gallery-img" />
+        <img src="../HTML/images/Smoker 105.JPG" alt="Smoker 105" class="gallery-img" />
+        <img src="../HTML/images/Smoker 113.JPG" alt="Smoker 113" class="gallery-img" />
+      </div>
+      <!-- Modal for full image view -->
+      <div id="imgModal" class="modal">
+        <span class="close" id="modalClose">&times;</span>
+        <span class="next">&#10095;</span>
+        <span class="prev">&#10094;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+      </div>
+      <script>
+        // Modal functionality for gallery images
+        document.addEventListener('DOMContentLoaded', function() {
+          const modal = document.getElementById('imgModal');
+          const modalImg = document.getElementById('modalImg');
+          const captionText = document.getElementById('caption');
+          const closeBtn = document.getElementById('modalClose');
+          const nextBtn = document.querySelector('.next');
+          const prevBtn = document.querySelector('.prev');
+          document.querySelectorAll('.gallery-img').forEach(function(img) {
+            img.addEventListener('click', function() {
+              modal.style.display = 'block';
+              modalImg.src = this.src;
+              modalImg.alt = this.alt;
+              captionText.textContent = this.alt;
+            });
+          });
+          closeBtn.onclick = function() {
+            modal.style.display = 'none';
+          };
+          nextBtn.onclick = function() {
+            let current = Array.from(document.querySelectorAll('.gallery-img')).findIndex(i => i.src === modalImg.src);
+            let nextIndex = (current + 1) % document.querySelectorAll('.gallery-img').length;
+            modalImg.src = document.querySelectorAll('.gallery-img')[nextIndex].src;
+            modalImg.alt = document.querySelectorAll('.gallery-img')[nextIndex].alt;
+            captionText.textContent = modalImg.alt;
+          };
+          prevBtn.onclick = function() {
+            let current = Array.from(document.querySelectorAll('.gallery-img')).findIndex(i => i.src === modalImg.src);
+            let prevIndex = (current - 1 + document.querySelectorAll('.gallery-img').length) % document.querySelectorAll('.gallery-img').length;
+            modalImg.src = document.querySelectorAll('.gallery-img')[prevIndex].src;
+            modalImg.alt = document.querySelectorAll('.gallery-img')[prevIndex].alt;
+            captionText.textContent = modalImg.alt;
+          };
+          modal.onclick = function(e) {
+            if (e.target === modal) {
+              modal.style.display = 'none';
+            }
+          };
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+              modal.style.display = 'none';
+            }
+          });
+        });
+      </script>
+    </div>
+  </main>
+  <footer id="footer">
+    &copy; 2012&ndash;2025 D&amp;C Manufacturing. All rights reserved.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | D&amp;C Manufacturing</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7c2e5e8e2a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+      background: #f4f7fa url(../HTML/images/Plasma\ cutter.jpeg.webp) no-repeat center top fixed;
+      background-size: cover;
+      margin: 0;
+      color: #1a365d;
+      min-height: 100vh;
+    }
+    .main-header {
+      background: linear-gradient(90deg, #1a365d 0%, #3182ce 100%);
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(30,54,93,0.08);
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .logo {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: auto;
+    }
+    nav ul li {
+      display: inline-block;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(49,130,206,0.92);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: background 0.18s, color 0.18s;
+      box-shadow: 0 1px 4px rgba(30,54,93,0.07);
+    }
+    nav ul li a:hover, nav ul li a:focus {
+      background: #1a365d;
+      color: #e2e8f0;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      padding: 0 24px 48px 24px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(30,54,93,0.07);
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a365d;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    p.subtitle {
+      text-align: center;
+      color: #4a5568;
+      margin-bottom: 36px;
+      font-size: 1.15rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(30, 64, 175, 0.07);
+      padding: 32px 24px;
+      transition: box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .service-card:hover {
+      box-shadow: 0 15px 32px rgba(1, 4, 12, 0.13);
+    }
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 18px;
+      color: #3182ce;
+    }
+    .service-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #2d3748;
+    }
+    .service-desc {
+      font-size: 1rem;
+      color: #4a5568;
+      margin-bottom: 0;
+    }
+    #footer {
+      background: #1a365d;
+      color: #fff;
+      text-align: center;
+      padding: 18px 0 16px 0;
+      font-size: 15px;
+      letter-spacing: 1px;
+      margin-top: 40px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 -2px 8px rgba(30,54,93,0.07);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    @media (max-width: 700px) {
+      .container {
+        padding: 0 8px 32px 8px;
+      }
+      .nav-container {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 12px 8px;
+      }
+      .service-card { padding: 24px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="nav-container">
+      <div class="logo">D&amp;C Manufacturing</div>
+      <nav>
+        <ul>
+          <li><a href="dandcmfg.html">Home</a></li>
+          <li><a href="services.html" aria-current="page">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="Contact.html">Contact Us</a></li>
+          <li><a href="https://derksenbuildings.com" target="_blank" rel="noopener">Portable Buildings</a></li>
+          <li><a href="https://wildlifemanagementtechnologies.com/" target="_blank" rel="noopener">Wildlife Management</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <h1>Our Services &amp; Capabilities</h1>
+      <p class="subtitle">Empowering your business with innovative solutions and expert support.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon"><i class="fas fa-code"></i></span>
+          <div class="service-title">Custom Manufacturing Services</div>
+          <p class="service-desc">Providing engineered manufacturing solutions tailored to meet unique fabrication requirements. Utilizing advanced design methodologies and precision fabrication technologies—including CNC machining, plasma cutting, and multi-process welding—we deliver custom-built components and assemblies optimized for performance, durability, and application-specific functionality.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon"><i class="fas fa-cloud"></i></span>
+          <div class="service-title">Welding Services</div>
+          <p class="service-desc">Offering a comprehensive range of precision welding solutions for both custom fabrication and repair applications. Available welding processes include MIG (GMAW), TIG (GTAW), Shielded Metal Arc Welding (SMAW), and Spot Welding, among others. We specialize in working with a wide variety of materials, including but not limited to carbon steel, stainless steel, aluminum, cast iron, brass (brazing), and select thermoplastics. Services encompass structural fabrication, component repair, prototyping, and modification to meet exact specifications and industry standards.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon"><i class="fas fa-shield-alt"></i></span>
+          <div class="service-title">Parts Manufacturing</div>
+          <p class="service-desc">Equipped with a high-precision CNC Plasma Arc Cutting Table capable of producing complex, repeatable components with tight tolerances. Suitable for both large-scale and small-scale part fabrication, this system ensures consistent accuracy and efficiency in high-volume or custom production runs.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="footer">
+    &copy; 2012&ndash;2025 D&amp;C Manufacturing. All rights reserved.
+  </footer>
+</body>
+</html>
